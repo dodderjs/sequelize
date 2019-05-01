@@ -13,3 +13,15 @@ Sequelize v6 will only support Node 8 and up
 Operator aliases were soft deprecated via the `opt-in` option `operatorAlises` in v5 they have been entirely removed.
 
 Please refer to previous changelogs for the migration guide.
+
+### Removed method aliases for hooks
+
+In order to streamlike API all method style add hook functions have been removed.
+
+Before: `MyModel.beforeCreate(...)`
+After: `MyModel.addHook('beforeCreate', ...)`
+
+This also affects the `Transaction.afterCommit` method.
+
+Before: `transaction.afterCommit(...)`
+After: `transaction.addHook(...)`

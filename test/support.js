@@ -42,7 +42,7 @@ const Support = {
       }
 
       if (options.beforeComplete) {
-        options.beforeComplete(sequelize, DataTypes);
+        options.addHook('beforeComplete', sequelize, DataTypes);
       }
 
       if (options.onComplete) {

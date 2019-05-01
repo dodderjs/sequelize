@@ -21,7 +21,7 @@ const conn = sequelize.connectionManager;
 
 // hooks
 
-sequelize.beforeCreate('test', () => {
+sequelize.addHook('beforeCreate', 'test', () => {
     // noop
 });
 
@@ -39,11 +39,11 @@ Sequelize.addHook('beforeCreate', () => {
     // noop
 });
 
-Sequelize.beforeConnect(() => {
+Sequelize.addHook('beforeConnect', () => {
 
 });
 
-Sequelize.afterConnect(() => {
+Sequelize.addHook('afterConnect', () => {
 
 });
 
