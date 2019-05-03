@@ -25,3 +25,8 @@ This also affects the `Transaction.afterCommit` method.
 
 Before: `transaction.afterCommit(...)`
 After: `transaction.addHook(...)`
+
+### Renamed operator symbols
+
+If you have relied on accessing sequelize operators via `Symbol.for('gt')` etc. you must now prefix them with `sequelize.operator` eg.
+`Symbol.for('sequelize.operator.gt')`
